@@ -1,0 +1,2 @@
+Use eGIT? or similar what is already in STS?
+http://ojitha.blogspot.co.uk/2013/04/how-to-github-projects-in-spring-tool.html
