@@ -11,3 +11,8 @@ Run as maven build (clean install)
 add TO DO.txt in root
 add to git and commit
 git log shows commit history
+
+used the following link to resolve issues with pushing to remote reop
+http://stackoverflow.com/questions/3601805/auth-failed-error-with-egit-and-github
+created a new generated key in eclipse and saved as private key and added in github, all works as expected now
+
