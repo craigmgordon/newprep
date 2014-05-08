@@ -32,7 +32,6 @@ public class Customer {
 	public void setSalary(BigDecimal salary) {
 		this.salary = salary;
 	}
-	//further test and again
 	
 	
 	
