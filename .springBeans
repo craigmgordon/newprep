@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/application.xml</config>
 		<config>src/main/resources/jpaContext.xml</config>
+		<config>src/main/resources/service.xml</config>
 	</configs>
 	<configSets>
 	</configSets>
