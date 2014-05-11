@@ -17,8 +17,8 @@
 		</property>
 		<property name="jpaPropertyMap">
 			<map>
-				<entry key="hibernate.dialect" value="org.hibernate.dialect.MySql5InnoDBDialect" />
-				<entry key="hibernate.hbm2ddl.auto" value="none" />
+				<entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+				<entry key="hibernate.hbm2ddl.auto" value="create" />
 				<entry key="hibernate.format_sql" value="true" />
 			</map>
 		</property>
@@ -30,5 +30,11 @@
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/devdb?autoReconnect=true" />
+		<property name="username" value="root" />
+		<!--  <property name="password" value="ebd416" />-->
+	</bean>
 
 </beans>

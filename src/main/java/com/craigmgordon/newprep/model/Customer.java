@@ -2,7 +2,18 @@ package com.craigmgordon.newprep.model;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CUSTOMER")
 public class Customer {
+
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String forename;
 	private String surname;
 	private String customerRef;
