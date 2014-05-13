@@ -5,13 +5,12 @@ import java.math.BigDecimal;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.google.common.base.Objects;
 
 @Entity
-@Table(name = "ORDER_ITEM")
+@Table(name = "PURCHASE_ORDER_ITEM")
 public class OrderItem {
 
 	@Id
@@ -20,14 +19,10 @@ public class OrderItem {
 	private String description;
 	private BigDecimal price;
 
-	@ManyToOne
-	private Order order;
-
 	@Override
 	public String toString() {
 		return Objects.toStringHelper(getClass()).add("id", id)
-				.add("description", description).add("price", price)
-				.add("order", order).toString();
+				.add("description", description).add("price", price).toString();
 	}
 
 	public Long getId() {

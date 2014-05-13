@@ -1,14 +1,10 @@
 package com.craigmgordon.newprep.model;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.google.common.base.Objects;
@@ -24,9 +20,6 @@ public class Customer {
 	private String surname;
 	private String customerRef;
 	private BigDecimal salary;
-
-	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private List<Order> orders = new ArrayList<Order>();
 
 	@Override
 	public String toString() {
@@ -81,14 +74,6 @@ public class Customer {
 
 	public void setForename(String forename) {
 		this.forename = forename;
-	}
-
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
 	}
 
 }
