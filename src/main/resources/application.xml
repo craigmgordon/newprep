@@ -10,6 +10,5 @@
 	<bean id="harness" class="com.craigmgordon.newprep.Harness" />
 	
 	<import resource="classpath:/jpaContext.xml" />
-	<import resource="classpath:/service.xml" />
 
 </beans>
