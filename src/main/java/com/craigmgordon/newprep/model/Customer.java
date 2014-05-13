@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.google.common.base.Objects;
+
 @Entity
 @Table(name = "CUSTOMER")
 public class Customer {
@@ -49,6 +51,13 @@ public class Customer {
 
 	public void setSalary(BigDecimal salary) {
 		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return Objects.toStringHelper(getClass()).add("id", id)
+				.add("customerRef", customerRef).add("forename", forename)
+				.add("surname", surname).add("salary", salary).toString();
 	}
 
 }

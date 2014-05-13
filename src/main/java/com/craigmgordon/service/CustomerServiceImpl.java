@@ -4,9 +4,18 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.craigmgordon.newprep.model.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.craigmgordon.newprep.model.Customer;
+import com.craigmgordon.newprep.repository.CustomerRepository;
+
+@Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
+
+	@Autowired
+	private CustomerRepository customerRepository;
 
 	public List<Customer> findAll() {
 		// TODO remove temp mock implementation
@@ -29,6 +38,11 @@ public class CustomerServiceImpl implements CustomerService {
 
 		return customers;
 
+	}
+
+	@Transactional
+	public Customer save(Customer customer) {
+		return customerRepository.save(customer);
 	}
 
 }

@@ -6,4 +6,6 @@ import com.craigmgordon.newprep.model.Customer;
 
 public interface CustomerService {
 	public List<Customer> findAll();
+
+	public Customer save(Customer customer);
 }

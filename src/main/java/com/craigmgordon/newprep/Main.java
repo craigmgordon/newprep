@@ -16,7 +16,8 @@ public class Main {
 		log.info("Spring Context Initialised");
 
 		Harness harness = (Harness) context.getBean("harness");
-		log.info(harness.service.findAll().toString());
+		harness.test();
+		;
 
 	}
 }
