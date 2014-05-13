@@ -54,4 +54,12 @@ public class OrderItem {
 		this.price = price;
 	}
 
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
 }

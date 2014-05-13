@@ -1,4 +1,4 @@
-package com.craigmgordon.service;
+package com.craigmgordon.newprep.service;
 
 import java.util.List;
 

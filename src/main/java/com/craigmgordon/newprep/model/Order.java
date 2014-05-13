@@ -23,6 +23,7 @@ public class Order {
 	@Id
 	@GeneratedValue
 	private Long id;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date orderDate;
 	private String orderStatus;
@@ -62,6 +63,22 @@ public class Order {
 
 	public void setOrderStatus(String orderStatus) {
 		this.orderStatus = orderStatus;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public List<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
 	}
 
 }

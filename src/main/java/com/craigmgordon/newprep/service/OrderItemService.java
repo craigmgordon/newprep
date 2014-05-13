@@ -1,4 +1,4 @@
-package com.craigmgordon.service;
+package com.craigmgordon.newprep.service;
 
 import com.craigmgordon.newprep.model.OrderItem;
 

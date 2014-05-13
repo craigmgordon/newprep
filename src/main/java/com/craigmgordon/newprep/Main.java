@@ -17,7 +17,6 @@ public class Main {
 
 		Harness harness = (Harness) context.getBean("harness");
 		harness.test();
-		;
 
 	}
 }
