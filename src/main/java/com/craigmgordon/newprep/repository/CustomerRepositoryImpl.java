@@ -1,7 +1,10 @@
 package com.craigmgordon.newprep.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -17,6 +20,13 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		em.persist(customer);
 		em.flush();
 		return customer;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public List<Customer> loadAll() {
+		Query query = em.createQuery("select c from Customer c");
+		List customers = query.getResultList();
+		return customers;
 	}
 
 }

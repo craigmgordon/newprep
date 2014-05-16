@@ -45,4 +45,8 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerRepository.save(customer);
 	}
 
+	public List<Customer> loadAll() {
+		return customerRepository.loadAll();
+	}
+
 }

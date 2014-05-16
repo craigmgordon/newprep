@@ -27,7 +27,7 @@ public class Harness {
 
 	final static Log log = LogFactory.getLog(Harness.class);
 
-	public void test() {
+	public void init() {
 		Customer customer = new Customer();
 		customer.setCustomerRef("TEST001");
 		customer.setForeame("testforename");
