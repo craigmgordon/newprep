@@ -39,13 +39,13 @@ public class TestCustomerService {
 		Assert.assertTrue(customers.size() > 0);
 	}
 
-	@Ignore
 	@Test(expected = LazyInitializationException.class)
 	public void testFetchTypeThrowsLazyInitializationException() {
 		List<Customer> customers = customerService.loadAll();
 		customers.get(0).getOrders().get(0);
 	}
 
+	@Ignore
 	@Test
 	public void testFetchTypeEagerResolvesException() {
 		List<Customer> customers = customerService.loadAll();
