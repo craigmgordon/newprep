@@ -33,7 +33,7 @@ public class Customer {
 				.add("surname", surname).add("salary", salary).toString();
 	}
 
-	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Order> orders = new ArrayList<Order>();
 
 	public String getForeame() {

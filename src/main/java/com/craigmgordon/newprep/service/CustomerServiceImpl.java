@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.craigmgordon.newprep.model.Customer;
+import com.craigmgordon.newprep.model.projection.CustomerOrderReport;
 import com.craigmgordon.newprep.repository.CustomerRepository;
 
 @Service("customerService")
@@ -47,6 +48,10 @@ public class CustomerServiceImpl implements CustomerService {
 
 	public List<Customer> loadAll() {
 		return customerRepository.loadAll();
+	}
+
+	public List<CustomerOrderReport> findAllCustomerOrderReports() {
+		return customerRepository.findAllCustomerOrderReports();
 	}
 
 }

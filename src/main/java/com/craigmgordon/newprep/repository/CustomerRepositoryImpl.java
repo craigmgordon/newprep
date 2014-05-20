@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import com.craigmgordon.newprep.model.Customer;
+import com.craigmgordon.newprep.model.projection.CustomerOrderReport;
 
 @Repository("customerRepository")
 public class CustomerRepositoryImpl implements CustomerRepository {
@@ -27,6 +28,14 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		Query query = em.createQuery("select c from Customer c");
 		List customers = query.getResultList();
 		return customers;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<CustomerOrderReport> findAllCustomerOrderReports() {
+		Query query = em
+				.createQuery("select new com.craigmgordon.newprep.model.projection.CustomerOrderReport(c.customerRef, c.forename, c.surname, o.id, o.orderDate)"
+						+ "from Customer c, Order o where c.id = o.customer.id");
+		return query.getResultList();
 	}
 
 }
