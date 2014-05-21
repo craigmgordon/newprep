@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -30,11 +31,10 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		return customers;
 	}
 
-	@SuppressWarnings("unchecked")
 	public List<CustomerOrderReport> findAllCustomerOrderReports() {
-		Query query = em
-				.createQuery("select new com.craigmgordon.newprep.model.projection.CustomerOrderReport(c.customerRef, c.forename, c.surname, o.id, o.orderDate)"
-						+ "from Customer c, Order o where c.id = o.customer.id");
+		TypedQuery<CustomerOrderReport> query = em
+				.createNamedQuery(Customer.FIND_CUSTOMER_ORDER_REPORTS,
+						CustomerOrderReport.class);
 		return query.getResultList();
 	}
 
