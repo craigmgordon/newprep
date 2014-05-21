@@ -47,7 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public List<Customer> loadAll() {
-		return customerRepository.loadAll();
+		return customerRepository.findAll();
 	}
 
 	public List<CustomerOrderReport> findAllCustomerOrderReports() {

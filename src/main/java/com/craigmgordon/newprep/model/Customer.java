@@ -9,8 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,10 +16,6 @@ import com.google.common.base.Objects;
 
 @Entity
 @Table(name = "CUSTOMER")
-@NamedQueries({
-		@NamedQuery(name = Customer.FIND_CUSTOMER_ORDER_REPORTS, query = "select new com.craigmgordon.newprep.model.projection.CustomerOrderReport(c.customerRef, c.forename, c.surname, o.id, o.orderDate)"
-				+ "from Customer c, Order o where c.id = o.customer.id"),
-		@NamedQuery(name = Customer.FIND_ALL_CUSTOMERS, query = "select c from Customer c") })
 public class Customer {
 
 	public static final String FIND_CUSTOMER_ORDER_REPORTS = "findCustomerOrderReports";
