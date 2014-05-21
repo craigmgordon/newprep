@@ -17,9 +17,16 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 	@PersistenceContext
 	private EntityManager em;
 
+	// NB persist is for saves and merge for updates
+	// Usually save methods are overridden to handle both
+	// flush is not required for merge. merge also returns an object
 	public Customer save(Customer customer) {
-		em.persist(customer);
-		em.flush();
+		if (customer.getId() == null) {
+			em.persist(customer);
+			em.flush();
+		} else {
+			customer = em.merge(customer);
+		}
 		return customer;
 	}
 
