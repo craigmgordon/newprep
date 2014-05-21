@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
@@ -24,11 +23,10 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		return customer;
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public List<Customer> loadAll() {
-		Query query = em.createQuery("select c from Customer c");
-		List customers = query.getResultList();
-		return customers;
+		TypedQuery<Customer> query = em.createNamedQuery(
+				Customer.FIND_ALL_CUSTOMERS, Customer.class);
+		return query.getResultList();
 	}
 
 	public List<CustomerOrderReport> findAllCustomerOrderReports() {
