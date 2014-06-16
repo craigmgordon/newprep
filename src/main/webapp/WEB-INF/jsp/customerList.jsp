@@ -8,10 +8,11 @@
 <title>Customer List</title>
 </head>
 <body>
-
+	<table>
+	<tr><th>Customer Ref</th><th>Forename</th><th>Surname</th></tr>
 	<c:forEach var="customer" items="${customers}">
-		<p>${customer.forename}${customer.surname}</p>
+		<tr><td>${customer.customerRef}</td><td>${customer.forename}</td><td>${customer.surname}</td></tr>
 	</c:forEach>
-
+</table>
 </body>
 </html>

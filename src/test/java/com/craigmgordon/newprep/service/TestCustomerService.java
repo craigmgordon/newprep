@@ -22,16 +22,6 @@ public class TestCustomerService {
 	@Autowired
 	private CustomerService customerService;
 
-	//
-	// Init no longer needed as data is not cleared on each restart
-	// @Before
-	// public void setUp() throws Exception {
-	// ApplicationContext context = new ClassPathXmlApplicationContext(
-	// "/application.xml");
-	// Harness harness = (Harness) context.getBean("harness");
-	// harness.init();
-	// }
-
 	@Test
 	public void testLoadAll() {
 		List<Customer> customers = customerService.findAll();
