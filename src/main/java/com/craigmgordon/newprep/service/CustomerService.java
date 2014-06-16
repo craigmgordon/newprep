@@ -8,8 +8,6 @@ import com.craigmgordon.newprep.model.projection.CustomerOrderReport;
 public interface CustomerService {
 	public List<Customer> findAll();
 
-	public List<Customer> loadAll();
-
 	public Customer save(Customer customer);
 
 	public List<CustomerOrderReport> findAllCustomerOrderReports();

@@ -34,20 +34,20 @@ public class TestCustomerService {
 
 	@Test
 	public void testLoadAll() {
-		List<Customer> customers = customerService.loadAll();
+		List<Customer> customers = customerService.findAll();
 		Assert.assertTrue(customers.size() > 0);
 	}
 
 	@Test(expected = LazyInitializationException.class)
 	public void testFetchTypeThrowsLazyInitializationException() {
-		List<Customer> customers = customerService.loadAll();
+		List<Customer> customers = customerService.findAll();
 		customers.get(0).getOrders().get(0);
 	}
 
 	@Ignore
 	@Test
 	public void testFetchTypeEagerResolvesException() {
-		List<Customer> customers = customerService.loadAll();
+		List<Customer> customers = customerService.findAll();
 		Assert.assertNotNull(customers.get(0).getOrders().get(0));
 	}
 
